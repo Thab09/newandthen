@@ -33,6 +33,8 @@ function Home() {
               <img src={story.multimedia[0].url} alt="" />
               <h4>{story.title}</h4>
               <h5>{story.byline}</h5>
+              <p>{story.abstract}</p>
+              <p>{story.published_date}</p>
             </a>
           </div>
         );
