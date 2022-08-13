@@ -25,7 +25,15 @@ function Popular() {
         return (
           <div className="card" key={story.id}>
             <a href={story.url} target="_blank" rel="noreferrer">
-              <img src={story.media[0]["media-metadata"][0].url} alt="" />
+              <img
+                src={
+                  story.media[0] === undefined
+                    ? ""
+                    : story.media[0]["media-metadata"][0].url
+                }
+                alt=""
+              />
+              {console.log()}
               <h4>{story.title}</h4>
               <h5>{story.byline}</h5>
               <p>{story.abstract}</p>

@@ -3,13 +3,13 @@ import "../home.css";
 function Home() {
   const [topStories, setTopStories] = useState([]);
   let id = 0;
+
   const getData = async () => {
     const data = await fetch(
       `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_NYT_API_KEY}`,
       {
         headers: {
           "Access-Control-Request-Method": "GET",
-          //   "Access-Control-Request-Headers": "Content-Type, x-requested-with",
           Accept: "application/json",
         },
       }
@@ -22,7 +22,7 @@ function Home() {
     getData();
     // eslint-disable-next-line
   }, []);
-  console.log(topStories);
+
   return (
     <div className="home">
       {topStories.map((story) => {
