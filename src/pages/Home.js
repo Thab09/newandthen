@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import "../home.css";
+import { HomeContainer, Card } from "../styles/Home.styled";
+
 function Home() {
   const [topStories, setTopStories] = useState([]);
   let id = 0;
@@ -22,25 +23,28 @@ function Home() {
     getData();
     // eslint-disable-next-line
   }, []);
-
   return (
-    <div className="home">
+    <HomeContainer>
       {topStories.map((story) => {
         id++;
         return (
-          <div className="card" key={id}>
+          <Card key={id}>
             <a href={story.url} target="_blank" rel="noreferrer">
-              <img src={story.multimedia[0].url} alt="" />
+              <img
+                src={story.multimedia === null ? "" : story.multimedia[0].url}
+                alt=""
+              />
               <h4>{story.title}</h4>
               <h5>{story.byline}</h5>
               <p>{story.abstract}</p>
-              <p>{story.published_date}</p>
+
+              {/* <p>{story.published_date}</p> */}
             </a>
-          </div>
+          </Card>
         );
       })}
       <h4>home</h4>
-    </div>
+    </HomeContainer>
   );
 }
 

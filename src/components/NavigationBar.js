@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import { NavBar } from "../styles/NavBar.styled";
 
 function NavigationBar() {
   return (
-    <div className="navbar">
-      <h2 className="logo">now&then</h2>
+    <NavBar>
+      <h1>now&then</h1>
       <div className="nav">
         <Link to="/">
           <h4>Home</h4>
@@ -15,7 +16,7 @@ function NavigationBar() {
           <h4>Categories</h4>
         </Link>
       </div>
-    </div>
+    </NavBar>
   );
 }
 
