@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HomeContainer, Card } from "../styles/Home.styled";
+import { NewsContainer, Card } from "../styles/News.styled";
 
 function Home() {
   const [topStories, setTopStories] = useState([]);
@@ -24,7 +24,7 @@ function Home() {
     // eslint-disable-next-line
   }, []);
   return (
-    <HomeContainer>
+    <NewsContainer>
       {topStories.map((story) => {
         id++;
         return (
@@ -43,8 +43,7 @@ function Home() {
           </Card>
         );
       })}
-      <h4>home</h4>
-    </HomeContainer>
+    </NewsContainer>
   );
 }
 

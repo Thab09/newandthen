@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import { NewsContainer, Card } from "../styles/News.styled";
+
 function Popular() {
   const [popular, setPopular] = useState([]);
   const getData = async () => {
@@ -18,32 +20,29 @@ function Popular() {
   useEffect(() => {
     getData();
   }, []);
-  console.log(popular);
+
   return (
-    <div className="popular">
+    <NewsContainer>
       {popular.map((story) => {
         return (
-          <div className="card" key={story.id}>
+          <Card key={story.id}>
             <a href={story.url} target="_blank" rel="noreferrer">
               <img
                 src={
                   story.media[0] === undefined
                     ? ""
-                    : story.media[0]["media-metadata"][0].url
+                    : story.media[0]["media-metadata"][2].url
                 }
                 alt=""
               />
-              {console.log()}
               <h4>{story.title}</h4>
               <h5>{story.byline}</h5>
               <p>{story.abstract}</p>
-              <p>{story.published_date}</p>
             </a>
-          </div>
+          </Card>
         );
       })}
-      <h4>home</h4>
-    </div>
+    </NewsContainer>
   );
 }
 

@@ -7,7 +7,9 @@ import { GlobalStyles } from "./styles/Global";
 import Home from "./pages/Home";
 import Popular from "./pages/Popular";
 import Categories from "./pages/Categories";
+import SelectedCategory from "./pages/SelectedCategory";
 import NavigationBar from "./components/NavigationBar";
+import LogoBar from "./components/LogoBar";
 
 const theme = {
   primary: "ffffff",
@@ -21,12 +23,17 @@ function App() {
       <GlobalStyles />
       <Container>
         <BrowserRouter>
+          <LogoBar />
           <NavigationBar />
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/popular" element={<Popular />} />
               <Route path="/categories" element={<Categories />} />
+              <Route
+                path="/categories/:category"
+                element={<SelectedCategory />}
+              />
             </Routes>
           </main>
         </BrowserRouter>

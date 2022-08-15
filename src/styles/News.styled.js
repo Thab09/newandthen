@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const HomeContainer = styled.div`
+export const NewsContainer = styled.div`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -8,10 +8,11 @@ export const HomeContainer = styled.div`
 
 export const Card = styled.div`
   overflow: hidden;
-  height: 330px;
+  height: 320px;
   padding: 10px;
   opacity: 0.9;
   cursor: pointer;
+  border: 2px solid #bababa;
   img {
     height: 40%;
     width: 100%;
@@ -37,6 +38,16 @@ export const Card = styled.div`
   }
   &:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 2px solid #000000;
     opacity: 1;
   }
+
+  ${(props) =>
+    props.catCard &&
+    css`
+      height: 200px;
+      h4 {
+        padding-top: 0;
+      }
+    `}
 `;
