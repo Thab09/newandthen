@@ -65,5 +65,10 @@ export const Card = styled.div`
   @media (max-width: 500px) {
     height: 300px;
     padding: 15px;
+    ${(props) =>
+      props.catCard &&
+      css`
+        height: 200px;
+      `}
   }
 `;

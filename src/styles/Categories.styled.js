@@ -5,6 +5,9 @@ export const CategoryContainer = styled.div`
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  @media (max-width: 500px) {
+    grid-gap: 20px;
+  }
 `;
 
 export const CategoryCard = styled(Link)`
@@ -16,5 +19,7 @@ export const CategoryCard = styled(Link)`
   &:hover {
     opacity: 1;
     border: 2px solid #000000;
+  }
+  @media (max-width: 500px) {
   }
 `;
