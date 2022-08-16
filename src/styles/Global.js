@@ -9,10 +9,12 @@ export const GlobalStyles = createGlobalStyle`
     
 }
 body{
+    background-color: ${(props) => props.theme.background};
     font-family: 'Enriqueta', serif;
+    transition: all 0.1s ease;
 }
 a{
     text-decoration:none;
-    color: #000000;
+    color: ${(props) => props.theme.primary};
 }
 `;

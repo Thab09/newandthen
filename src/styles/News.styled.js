@@ -7,38 +7,42 @@ export const NewsContainer = styled.div`
 `;
 
 export const Card = styled.div`
+  background-color: ${(props) => props.theme.card};
   overflow: hidden;
   height: 320px;
-  padding: 10px;
+  padding: 15px;
   opacity: 0.9;
   cursor: pointer;
-  border: 2px solid #bababa;
+
+  transition: all 0.1s ease;
+
+  border: 2px solid ${(props) => props.theme.secondary};
   img {
     height: 40%;
     width: 100%;
     object-fit: cover;
   }
   h4 {
-    color: #121212;
+    color: ${(props) => props.theme.primary};
     line-height: 120%;
     padding-top: 8px;
     padding-bottom: 5px;
     font-size: 18px;
   }
   h5 {
-    font-size: 12px;
+    font-size: 10px;
+    font-weight: 400;
   }
 
   p {
     line-height: 135%;
     padding-top: 10px;
     font-size: 14px;
-    color: #5a5a5a;
+    color: ${(props) => props.theme.paragraph};
     font-weight: 500;
   }
   &:hover {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border: 2px solid #000000;
+    border: 2px solid ${(props) => props.theme.primary};
     opacity: 1;
   }
 
@@ -50,4 +54,16 @@ export const Card = styled.div`
         padding-top: 0;
       }
     `}
+  @media (max-width: 1200px) {
+    height: 350px;
+    padding: 10px;
+  }
+  @media (max-width: 900px) {
+    height: 300px;
+    padding: 10px;
+  }
+  @media (max-width: 500px) {
+    height: 300px;
+    padding: 15px;
+  }
 `;

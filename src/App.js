@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
@@ -11,19 +12,35 @@ import SelectedCategory from "./pages/SelectedCategory";
 import NavigationBar from "./components/NavigationBar";
 import LogoBar from "./components/LogoBar";
 
-const theme = {
-  primary: "ffffff",
-  secondary: "000000",
-  background: "000000",
+const LightTheme = {
+  primary: "#000000",
+  secondary: "#bababa",
+  paragraph: "#5a5a5a",
+  card: "#ffffff",
+  background: "#ffffff",
+};
+
+const DarkTheme = {
+  primary: "#ffffff",
+  secondary: "#b2b2b2",
+  paragraph: "#dbdbdb",
+  card: "#121111",
+  background: "#101010",
+};
+
+const themes = {
+  light: LightTheme,
+  dark: DarkTheme,
 };
 
 function App() {
+  const [theme, setTheme] = useState("light");
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themes[theme]}>
       <GlobalStyles />
       <Container>
         <BrowserRouter>
-          <LogoBar />
+          <LogoBar theme={theme} setTheme={setTheme} />
           <NavigationBar />
           <main>
             <Routes>
