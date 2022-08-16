@@ -11,6 +11,7 @@ import Categories from "./pages/Categories";
 import SelectedCategory from "./pages/SelectedCategory";
 import NavigationBar from "./components/NavigationBar";
 import LogoBar from "./components/LogoBar";
+import Footer from "./components/Footer";
 
 const LightTheme = {
   primary: "#000000",
@@ -53,6 +54,7 @@ function App() {
               />
             </Routes>
           </main>
+          <Footer />
         </BrowserRouter>
       </Container>
     </ThemeProvider>
