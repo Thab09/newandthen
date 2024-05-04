@@ -1,7 +1,5 @@
 # now&then
 
-[Live Preview](https://papaya-cocada-56e30c.netlify.app/)
-
 * Built using ReactJS and Styled Components.
 * A news website where the data is fetched from the NYT API .
 * The website includes three pages: Homepage, popular news, and a categories page.
